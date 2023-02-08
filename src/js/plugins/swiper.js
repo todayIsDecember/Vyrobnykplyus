@@ -38,5 +38,4 @@ const swiper = new Swiper('.swiper', {
     },
   },
   watchOverflow: true,
-
 });

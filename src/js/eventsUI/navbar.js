@@ -14,7 +14,9 @@ class Navbar {
       el.addEventListener('click', () => {
         const lang = localStorage.getItem('lang');
         let msg = '';
-        lang === 'en' ? msg = 'PAGE IN DEVELOPMENT' : msg = 'СТОРІНКА В РОЗРОБЦІ';
+        lang === 'en'
+          ? (msg = 'PAGE IN DEVELOPMENT')
+          : (msg = 'СТОРІНКА В РОЗРОБЦІ');
         M.toast({ html: msg, classes: 'toast' });
       });
     });
