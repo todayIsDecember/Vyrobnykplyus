@@ -1,0 +1,307 @@
+$redback : #7d06328c;
+$red: #8e0038;
+
+
+
+.pa__navigation {
+  background-image: url('../img/banners/baner4.png');
+  background-size: cover;
+  background-position: -2px -50px;
+  @media (max-width: 665px) {
+    background-position: -5px -2px;
+  }
+  @media (max-width: 462px) {
+    background-position: -7px 0px;
+  }
+  width: 100%;
+  height: 120px;
+  margin: 50px 0;
+  .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h4 {
+      font-size: 30px;
+      color: $red;
+      font-family: "PT Root UI";
+      font-weight: 700;
+    }
+    ul {
+      display: flex;
+      li {
+        color: $red;
+        &:not(:first-child) {
+          margin-left: 50px;
+        }
+        a {
+          color: $red;
+        }
+      }
+      .arrow::after {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: inherit;
+        border-top: 7px double $red;
+        border-right: 7px double $red;
+        transform: rotate(45deg);
+        margin-top: 9px;
+        margin-left: 22px;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+.pa__products {
+  .products {
+    display: flex;
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: row;
+      margin-bottom: 30px;
+      width: 100%;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+      }
+      .product__img {
+        img {
+          max-width: 250px;
+          border-radius: 5%;
+          @media (max-width: 900px) {
+            max-width: 250px;
+          }
+        }
+      }
+      .product__info {
+        border-radius: 15%;
+        max-width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        height: 260px;
+
+        @media (max-width:900px) {
+          max-width: 100%;
+          height: auto;
+        }
+        @media (max-width: 600px) {
+          max-width: 100%;
+        }
+        .product__name {
+          font-size: 32px;
+          margin-top: 0px;
+        }
+        .product__description {
+          display: flex;
+          flex-direction: column;
+          .product__article {
+            position: relative;
+            color: #696969;
+            font-size: 20px;
+            height: auto;
+          }
+          .hideArticleAnimation {
+            animation-name: hideArticle;
+            animation-duration: 0.5s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            margin-right: 0;
+            display: none;
+          }
+          .more__information {
+            position: relative;
+            height: auto;
+            display: flex;
+            @media (max-width:600px) {
+              flex-direction: column;
+            }
+            .more__information__first__container {
+              opacity: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              border-right: 1px dashed #000;
+              display: none;
+              @media (max-width:600px) {
+                border: none;
+              }
+              .energy__value {
+                text-align: center;
+                // color: #8e0038;
+                color: #696969;
+                font-size: 16px;
+              }
+
+              .caloric__content {
+                text-align: center;
+                // color: #8e0038;
+                color: #696969;
+                font-size: 16px;
+              }
+
+              .product__diagram {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+                .dig {
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                overflow:auto;
+                .circle-diagram {
+                  --degree: calc(360deg / 100 * var(--percent));
+                  --hue: calc(360/100 * var(--percent));
+                  --accent-color: hsl(var(--hue), 100%, 50%);
+                  font-size: 1rem;
+                  width: 100%;
+                  width: 80px;
+                  aspect-ratio: 1;
+                  position: relative;
+                  border-radius: 50%;
+                  filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.5));
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-weight: 700;
+                  font-size: 10px;
+                  color: #fff;
+                  text-shadow: 0 0 5px black;
+                  cursor: pointer;
+                  @media (max-width:600px) {
+                    min-width: 100px !important;
+                    min-height: 100px !important;
+                  }
+                  &::before,
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    border-radius: 50%;
+                    z-index: -1;
+                  }
+                  &::before {
+                    inset: 1rem;
+                    background-color: rgb(255, 253, 253);
+                    background-image: radial-gradient(circle at calc(50% + 0.25rem), rgba(0, 0, 0, 0.25) 25%,
+                    transparent calc(25% + 0.5rem)),
+                    conic-gradient(
+                      rgba(255, 255, 255, 0.25) 0deg,
+                      rgba(0, 0, 0, 0.25) var(--degree)),
+                    conic-gradient(
+                      at calc(50% - 0.4rem) calc(50% + 0.4rem),
+                      transparent var(--degree),
+                      rgba(0, 0, 0, 0.25) calc(var(--degree) + 5deg)
+                    );
+                  }
+                  &::after {
+                    inset: 0;
+                    background-color: #7d06328c;
+                    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+                    --mask1: radial-gradient(black 25%, transparent calc(25% + 1px));
+                    --mask2: conic-gradient(transparent var(--degree), black calc(var(--degree) + 0.5deg));
+                    -webkit-mask-image: var(--mask1), var(--mask2);
+                    mask-image: var(--mask1), var(--mask2);
+                  }
+                  }
+                .proteins,
+                .fats,
+                .carbohydrates {
+                  // color: #8e0038;
+                  color: #696969;
+                  font-size: 16px;
+                  @media (max-width: 1402px) {
+                    font-size: 15px;
+                  }
+                }
+                }
+              }
+            }
+            .more__information__second__container {
+              opacity: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              // color: #8e0038;
+              color: #000;
+              font-size: 14px;
+              margin-left: 10px;
+              width: 100%;
+              display: none;
+              @media (max-width: 435px) {
+                font-size: 15px;
+                // width: auto;
+              }
+            }
+            .showDiagramAnimation {
+              animation-name: showDiagram;
+              animation-duration: 0.5s;
+              animation-delay: 0.5s;
+              animation-fill-mode: forwards;
+              display: flex;
+            }
+            .showTextAnimation {
+              animation-name: showText;
+              animation-duration: 0.5s;
+              animation-delay: 0.5s;
+              animation-fill-mode: forwards;
+              display: flex;
+            }
+          }
+          .showMore {
+            position: relative;
+            margin-top: auto;
+            margin-left: auto;
+            background-color: #fff;
+            color: #8e0038;
+            border: 1px solid #8e0038;
+            &:hover {
+              color: #fff;
+              background-color: #8e0038;
+            }
+          }
+        }
+      }
+    }
+    span {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  .animationsKey {
+    @keyframes  showText{
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes  showDiagram{
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes  hideArticle{
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}

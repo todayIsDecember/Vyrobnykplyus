@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+
+$red: #8e0038;
+
+.contacts__page {
+  .contacts__container {
+    display: flex;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+
+    @media (max-width:690px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact__card{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 0;
+      transition: 0.2s ease 0s;
+      &:hover {
+        top: -10px;
+        transition: 0.2s ease 0s;
+      }
+      .header {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-family: 'Karla', sans-serif;
+        text-transform: uppercase;
+      }
+      span {
+        margin-bottom: 0px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        // font-family: 'Karla', sans-serif;
+        color: rgb(151, 151, 151);
+      }
+    }
+  }
+
+  .leaderships__container {
+    .leaderships__header {
+      a {
+        color: grey;
+        // font-size: 12px;
+        text-transform: capitalize;
+        &:hover {
+          color: grey;
+        }
+      }
+      .indicator {
+        background-color: grey;
+      }
+      .active {
+        color: grey;
+        background-color: inherit !important;
+      }
+    }
+    .open__container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @media (max-width:690px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card__open {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0px;
+        width: 26%;
+        animation: animates 0.5s linear forwards;
+        position: relative;
+        top: 0px;
+        transition: 200ms ease 0s;
+        &:hover {
+          top: -5px;
+          transition: 200ms ease 0s;
+        }
+        @media (max-width:690px) {
+          width: 70%;
+          text-align: center;
+        }
+        .office {
+          font-size: 16px;
+          color: grey;
+
+        }
+        .full__name {
+          font-size: 16px;
+          color: $red;
+
+        }
+        .contacts {
+          font-size: 16px;
+          color: grey;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+  #map {
+    width: 100%;
+    height: 400px;
+  }
+
+  @keyframes animates {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

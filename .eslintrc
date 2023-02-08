@@ -1,0 +1,23 @@
+{
+  "extends": ["airbnb/base"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "eol-last": "off",
+    "no-use-before-define": "off",
+    "no-undef": "off",
+    "no-console": "off",
+    "camelcase": "off",
+    "no-param-reassign":"off",
+    "no-shadow": "off",
+    "no-return-assign": "off",
+    "import/no-unresolved": "off",
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }]
+  }
+}

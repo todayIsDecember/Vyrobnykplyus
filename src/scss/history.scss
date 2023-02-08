@@ -1,0 +1,53 @@
+$red: #8e0038;
+
+.pa__history {
+  .flex {
+    display: flex;
+    flex-direction: column;
+    .history__pa__header {
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .history__pa {
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .last {
+      margin-bottom: 60px;
+    }
+    .img__container {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      @media (max-width: 710px) {
+        flex-direction: column;
+      }
+      img {
+        width: 200px;
+        margin-right: 20px;
+        border-radius: 20px;
+        @media (max-width: 710px) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .btn__home {
+      background-color: #fff;
+      color: $red;
+      border: 2px solid $red;
+      padding: 0px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: none;
+      align-self: center;
+      &:hover {
+        background-color: $red !important;
+        color: #fff;
+        transition: 0.5s ease-in-out 0s;
+      }
+    }
+  }
+}
